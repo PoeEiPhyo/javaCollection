@@ -1,6 +1,7 @@
 package Collection;
 
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -35,19 +36,20 @@ public class StudentManager {
 			Student s=new Student(name,phone,roll,address);
 			
 			try{
-				OutputStream fw = new FileOutputStream("input");  
+				File  file = new File("studentInformation.txt");
+				OutputStream fw = new FileOutputStream(file);  
 				ObjectOutputStream o = new ObjectOutputStream(fw);
 				o.writeObject(s);
 				o.close();
 				fw.close();
 	    
-				FileInputStream fi = new FileInputStream("input");
+				FileInputStream fi = new FileInputStream("studentInformation.txt");
 				ObjectInputStream oi = new ObjectInputStream(fi);
 				
 				Student s1;
 				s1=(Student) oi.readObject();
 				st+=s1.toString();
-				System.out.println("Student Information:\n"+st);				
+				System.out.println("\nStudent Information:\n"+st);				
 				
 				fi.close();
 				oi.close();

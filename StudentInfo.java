@@ -22,11 +22,11 @@ public class StudentInfo {
 		
 		Map<String,StudentInfo> stdList=new HashMap<String,StudentInfo>();
 		
-		stdList.put("nge nge", new StudentInfo("nge nge","456","5CS-10","Yangon"));
-		stdList.put("phyo phyo", new StudentInfo("phyo phyo","987","5CS-50","Monywa"));
-		stdList.put("aye aye", new StudentInfo("aye aye","768","5CS-18","Mandalay"));
-		stdList.put("mg mg", new StudentInfo("mg mg","875","5CS-5","Monywa"));
-		stdList.put("ma ma", new StudentInfo("ma ma","1234","5CS-1","Yangon"));
+		stdList.put("Nge Nge", new StudentInfo("Nge Nge","456","5CS-10","Yangon"));
+		stdList.put("Phyo Phyo", new StudentInfo("Phyo Phyo","987","5CS-50","Monywa"));
+		stdList.put("Aye Aye", new StudentInfo("Aye Aye","768","5CS-18","Mandalay"));
+		stdList.put("Mg Mg", new StudentInfo("Mg Mg","875","5CS-5","Monywa"));
+		stdList.put("Ma Ma", new StudentInfo("Ma Ma","1234","5CS-1","Yangon"));
 				
 		System.out.println("Enter Start Name:");
 		String st=sc.nextLine();
@@ -36,7 +36,7 @@ public class StudentInfo {
 		while(i.hasNext()) {
 			Map.Entry me = (Map.Entry)i.next();
 			s=(StudentInfo) me.getValue();
-			if(s.name.startsWith(st)) {
+			if(s.name.toLowerCase().startsWith(st.toLowerCase())) {
 				System.out.println("Name:"+s.name+"\nPhone:"+s.phone+"\nRoll No:"+s.rollNO+"\nAddress:"+s.address);
 				System.out.println();
 			}
